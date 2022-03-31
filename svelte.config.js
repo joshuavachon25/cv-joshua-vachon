@@ -8,6 +8,11 @@ const config = {
   extensions: [".svelte", ...mdsvexConfig.extensions],
 
   kit: {
+    vite: {
+      ssr: {
+        noExternal: ["three"]
+      }
+    },
     adapter: adapter(),
   },
 
