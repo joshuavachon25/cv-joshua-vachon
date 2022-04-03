@@ -1,4 +1,56 @@
-/* Write your global styles here, in PostCSS syntax */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #F5F6F8;
+    background-image: url('/e1.png'), url('/e2.png'), url('/e3.png');
+    background-repeat: no-repeat;
+    background-position: left top, right top, right top;
+    background-attachment: fixed;
+}
+
+.texteGlou{
+    color: #714db9;
+}
+
+
+
+.texte:hover{
+    text-shadow:
+            3px  3px 0 #714db9,
+            -1px -1px 0 #714db9,
+            1px -1px 0 #714db9,
+            -1px  1px 0 #714db9,
+            1px  1px 0 #714db9;
+}
+
+.face,.texte{transition: 0.5s;}
+
+.face:hover{
+    filter: drop-shadow(0 0 50px #714db9);
+}
+
+.articleTheme h2{
+    @apply text-3xl text-justify my-5;
+}
+
+.articleTheme h3{
+    @apply text-2xl text-justify;
+}
+
+.articleTheme h4{
+    @apply text-xl text-justify;
+}
+
+.articleTheme p{
+    @apply text-lg text-justify;
+}

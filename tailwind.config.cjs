@@ -4,7 +4,14 @@ const config = {
   theme: {
     extend: {},
   },
-
+  variants: {
+    extend: {
+      ringWidth: ['hover', 'active'],
+    }
+  },
+  daisyui: {
+    themes: false
+  },
   plugins: [require("daisyui")],
 };
 

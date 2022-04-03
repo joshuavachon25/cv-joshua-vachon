@@ -12,7 +12,6 @@
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.4.2",
-    "mdsvex": "^0.10.5",
     "postcss": "^8.4.5",
     "postcss-load-config": "^3.1.1",
     "svelte": "^3.44.0",
@@ -21,8 +20,10 @@
   },
   "type": "module",
   "dependencies": {
+    "@supabase/supabase-js": "^1.33.2",
     "daisyui": "^2.13.3",
     "svelte-cubed": "^0.2.1",
+    "svelte-markdown": "^0.2.2",
     "three": "^0.139.0"
   }
 }
