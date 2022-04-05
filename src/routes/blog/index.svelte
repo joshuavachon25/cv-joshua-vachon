@@ -1,5 +1,11 @@
 <script>
-    export let articles = []
+    import { format} from 'date-fns'
+
+    const getPosts = async () => {
+        let req = await fetch("/api/getPosts")
+        let res = await req.json()
+        return res.articles
+    }
 </script>
 
 <div class="w-full px-5 lg:px-0 lg:w-4/5 mx-auto mb-20">
@@ -10,24 +16,25 @@
     </div>
 
     <div class="grid grid-cols-1 gap-5 w-full lg:w-4/5 mx-auto">
-        {#each articles as article}
-            <a class="hover:ring-4 group hover:ring-gray-500 hover:shadow-lg duration-500 card bg-gray-100 text-gray-800 shadow-md"  href={"/blog/" + article.slug}>
-                <div class="card-body flex flex-row justify-between items-center">
-                    <div class="grow">
-                        <h2 class="text-left text-2xl">{article.titre}</h2>
-                        <p class="text-xs text-gray-400">{article.date}</p>
-                        <p>{article.extrait}</p>
+        {#await getPosts()}
+            Loading
+        {:then articles}
+            {#each articles as article}
+                <a class="hover:ring-4 group hover:ring-gray-500 hover:shadow-lg duration-500 card bg-gray-100 text-gray-800 shadow-md"  href={"/blog/" + article.id}>
+                    <div class="card-body flex flex-row justify-between items-center">
+                        <div class="grow">
+                            <h2 class="text-left text-2xl">{article.titre}</h2>
+                            <p class="text-xs text-gray-400">{format(new Date(article.dateCreation), 'dd/MM/yyyy')}</p>
+                            <p>{article.resume}</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-chevron-right fa-3x group-hover:text-blue-500"></i>
+                        </div>
                     </div>
-                    <div>
-                        <i class="fa-solid fa-chevron-right fa-3x group-hover:text-blue-500"></i>
-                    </div>
-                </div>
-            </a>
+                </a>
+            {/each}
+        {/await}
 
-
-
-
-        {/each}
     </div>
 
 </div>

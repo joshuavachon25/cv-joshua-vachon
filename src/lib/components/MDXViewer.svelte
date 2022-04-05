@@ -29,6 +29,12 @@
 
 </script>
 
+<div class="articleTheme">
+    <SvelteMarkdown source={md} {options} />
+</div>
+
+
+
 <!--<SvelteMarkdown {source} renderers={{
 	'selector': Fake
 }} {options} />-->

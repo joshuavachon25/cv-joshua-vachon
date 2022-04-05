@@ -54,3 +54,13 @@ html{
 .articleTheme p{
     @apply text-lg text-justify;
 }
+
+.projetCarte{
+    background-size: 100%;
+    background-position: center center;
+}
+
+.projetCarte:hover{
+    background-size: 110%;
+    background-position: center center;
+}
