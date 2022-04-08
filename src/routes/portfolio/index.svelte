@@ -1,8 +1,5 @@
 <script>
-    import Modals from "../../lib/components/Modals.svelte";
-
-    let projetChoisi = null
-    let estOuvert = false
+    import {stacks} from '$lib/utils/techIcons'
 
     const getProjets = async () => {
         let req = await fetch("/api/getProjects")
@@ -10,32 +7,50 @@
         return res.projets
     }
 
-    const ouvrirProjet = (projet) => {
-        projetChoisi = projet
-        estOuvert = true
-    }
-
-    const fermerProjet = () => {
-        projetChoisi = null
-        estOuvert = false
-    }
-
 </script>
 
 
-<div class="grid grid-cols-3 w-full mx-auto">
+<div class="grid grid-cols-2 gap-5 w-full mx-auto mt-28 pb-28">
     {#await getProjets()}
         Loading
     {:then projets}
         {#each projets as projet}
-            <span class="cursor-pointer group aspect-video transition-all duration-500 card rounded-none text-gray-800 projetCarte" style="background-image: url('{projet.cover}');" on:click={() => ouvrirProjet(projet)} >
-                <div class="opacity-0 transition-opacity duration-300 group-hover:opacity-100 card-body flex flex-row justify-between items-end font-black text-2xl bg-white bg-opacity-70">
-                    {projet.titre}
+                <span class="group aspect-video transition-all duration-500 card rounded-none text-gray-800 projetCarte shadow-md" style="background-image: url('{projet.cover}'); background-size: cover;" >
+                <div class="opacity-0 transition-opacity duration-300 group-hover:opacity-100 card-body flex flex-col justify-between items-start bg-white bg-opacity-95">
+                    <div>
+                        <h4 class="font-black text-2xl ">{projet.titre}</h4>
+                        <p>{projet.content}</p>
+                    </div>
+                    <div class="flex flex-col w-full">
+                        {#if projet.stack !== null}
+                            <h4 class="text-xs font-bold my-5">Technologies</h4>
+                            <div class="flex flex-row justify-evenly items-center w-full">
+                                {#each projet.stack as stack}
+                                   <span class="relative group w-12 select-none">
+                                       <span >
+                                           {@html stacks[stack]?.icone}
+                                       </span>
+
+                                       <span class="text-xs">{stacks[stack]?.nom}</span>
+                                   </span>
+                                {/each}
+
+                            </div>
+
+                        {/if}
+                        {#if projet.url !== null}
+
+                                <a href={projet.url} target="_blank" class="absolute top-0 right-0 px-3 py-2 bg-info rounded-bl-2xl">Visiter le projet</a>
+
+
+                        {/if}
+                    </div>
+
                 </div>
             </span>
+
+
         {/each}
     {/await}
 </div>
-
-<Modals projet={projetChoisi} estOuvert={estOuvert} on:fermer={fermerProjet}/>
 

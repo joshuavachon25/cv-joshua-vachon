@@ -1,46 +1,54 @@
 <script>
-  import "../app.css";
-  import {page} from "$app/stores";
+    import "../app2.css";
+    import {page} from "$app/stores";
 
-  import Hamburger from "$lib/components/Hamburger.svelte";
+    import Hamburger from "$lib/components/Hamburger.svelte";
 
-  const menu = [
-  {nom: "Blog", url: "/blog"},
-  {nom: "Portfolio", url: "/portfolio"},
-  {nom: "Labo", url: "/labo"},
-  {nom: "À propos", url: "/cv"}
-  ]
+    const menu = [
+        {nom: "Blog", url: "/blog"},
+        {nom: "Portfolio", url: "/portfolio"},
+        {nom: "Labo", url: "/labo"},
+        {nom: "À propos", url: "/cv"}
+    ]
 
-  const reseaux = [
-  {icone: "fa-brands fa-github", url: "#"},
-  {icone: "fa-brands fa-researchgate", url: "#"},
-  {icone: "fa-brands fa-linkedin", url: "#"}
-  ]
+    const reseaux = [
+        {icone: "fa-brands fa-github", url: "#"},
+        {icone: "fa-brands fa-researchgate", url: "#"},
+        {icone: "fa-brands fa-linkedin", url: "#"}
+    ]
 
-  const sites = [
-  {icone: "fak fa-cyberfjord", url: "#"},
-  {icone: "fak fa-humatica", url: "#"}
-  ]
+    const sites = [
+        {icone: "fak fa-cyberfjord", url: "#"},
+        {icone: "fak fa-humatica", url: "#"}
+    ]
 
 
 </script>
 
-    <div class="absolute left-0 top-0 h-screen w-full lg:w-2/3">
+<div class="flex flex-row">
+    <div class="w-1/12"></div>
+    <div class="h-screen w-full lg:w-8/12 flex flex-col">
+        <a class="grow-0 mt-10" href="/">
+            <h1><span class="font-bold">JOSHUA</span><span class="font-light">VACHON</span></h1>
+        </a>
         <slot />
     </div>
 
-    <Hamburger sites={sites} reseaux={reseaux} menu={menu}/>
-    <div class="hidden fixed right-20 top-1/2 transform -translate-y-1/2 lg:flex flex-col w-1/3">
-        <div class="flex flex-col gap-2 lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-black text-right justify-center items-end">
-            <a href="/"><div class="-mr-10 inline-block w-48 h-48 transition-opacity duration-500 face" style="background-image: url('/facejoshua.svg'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: {$page.url.pathname === '/' ? '0': '100'}">
-            </div></a>
-            {#each menu as item}
-                <a class="texte {$page.url.pathname === item.url ? 'texteGlou': 'text-black'}" href={item.url}>{item.nom}</a>
-            {/each}
-            <div class="flex flex-row items-center px-6 gap-3 text-3xl text-black h-20">
-                {#each reseaux as reseau}
-                    <a href={reseau.url}><i class={reseau.icone}></i></a>
+    <div class="w-2/12">
+        <div class="flex flex-row gap-4 justify-end mt-10">
+            <a href="https://twitter.com/joshuavachon25" class="transition-colors duration-500 hover:text-mauve" target="_blank"><i class="fa-brands fa-twitter fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/joshuavachon25/" class="transition-colors duration-500 hover:text-mauve" target="_blank"><i class="fa-brands fa-linkedin-in fa-2x"></i></a>
+            <a href="https://github.com/joshuavachon25" class="transition-colors duration-500 hover:text-mauve" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
+            <a href="https://stackblitz.com/@joshuavachon25" class="transition-colors duration-500 hover:text-mauve" target="_blank"><i class="fa-solid fa-bolt fa-2x"></i></a>
+        </div>
+        <div class="text-right flex flex-col justify-center h-full items-end -mt-20">
+            <div class="sticky top-0 bottom-0">
+                {#each menu as item}
+                    <a class="lien transition-all duration-500 my-3 {$page.url.pathname === item.url ? 'texteGlou': 'text-black '} hover:text-mauve hover:tracking-wider" href={item.url}>{item.nom}</a>
                 {/each}
             </div>
         </div>
+
     </div>
+    <div class="w-1/12"></div>
+</div>

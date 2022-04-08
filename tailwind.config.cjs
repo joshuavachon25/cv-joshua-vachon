@@ -2,7 +2,11 @@ const config = {
   content: ["./src/**/*.{html,js,svelte,ts}"],
 
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'mauve': "#6F73D2"
+      }
+    },
   },
   variants: {
     extend: {
@@ -12,7 +16,7 @@ const config = {
   daisyui: {
     themes: false
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require('@tailwindcss/typography')],
 };
 
 module.exports = config;
