@@ -21,7 +21,7 @@
 </script>
 
 <header class="flex flex-row justify-between items-center shadow-sm">
-    <a href="/" class="h-20 w-56 flex justify-center items-center px-5">
+    <a href="/" class="h-20 w-56 flex justify-center items-center px-5 z-50">
         <img src="/logonom.png">
     </a>
     <nav class="hidden lg:flex lg:flex-row justify-between gap-5 ml-5 text-lg">

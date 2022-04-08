@@ -15,8 +15,8 @@
         Loading
     {:then projets}
         {#each projets as projet}
-                <span class="group aspect-video transition-all duration-500 card rounded-none text-gray-800 projetCarte shadow-md" style="background-image: url('{projet.cover}'); background-size: cover;" >
-                <div class="opacity-0 transition-opacity duration-300 group-hover:opacity-100 card-body flex flex-col justify-between items-start bg-white bg-opacity-95">
+                <span class="group aspect-video transition-all duration-500 card rounded-none text-gray-800 projetCarte shadow-md " style="background-image: url('{projet.cover}'); background-size: cover;">
+                <div class="skewElem opacity-0 transition-opacity duration-300 group-hover:opacity-100 card-body flex flex-col justify-between items-start bg-white bg-opacity-95">
                     <div>
                         <h4 class="font-black text-2xl ">{projet.titre}</h4>
                         <p>{projet.content}</p>
