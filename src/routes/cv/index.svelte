@@ -1,8 +1,8 @@
 <script>
     import {stacks} from '$lib/utils/techIcons'
-    import {gsap}  from "gsap";
-    import {ScrollTrigger} from "gsap/ScrollTrigger.js";
-    gsap.registerPlugin(ScrollTrigger);
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+
     import {onMount} from "svelte";
     const formations = [
         {
@@ -90,6 +90,7 @@
     const logiciels = [stacks['webstorm'],stacks['vscode'],stacks['figma'],stacks['qgis'],stacks['affinity'],stacks['godot'],stacks['blender'],stacks['plus']]
 
     onMount(() => {
+        gsap.registerPlugin(ScrollTrigger);
         gsap.utils.toArray(".page").forEach((page, i) => {
             gsap.to(page, {
                 scrollTrigger: {
