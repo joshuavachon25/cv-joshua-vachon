@@ -1,7 +1,7 @@
 <script>
     import {stacks} from '$lib/utils/techIcons'
     import {gsap}  from "gsap";
-    import ScrollTrigger from "gsap/ScrollTrigger.js";
+    import {ScrollTrigger} from "gsap/ScrollTrigger.js";
     gsap.registerPlugin(ScrollTrigger);
     import {onMount} from "svelte";
     const formations = [
