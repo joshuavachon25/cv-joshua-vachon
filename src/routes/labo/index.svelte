@@ -1,9 +1,5 @@
 <script>
-    const getExperiments = async () => {
-        let req = await fetch("/api/getExperiments")
-        let res = await req.json()
-        return res.experiments
-    }
+    export let experiments
 
 </script>
 
@@ -13,9 +9,6 @@
     </div>
 
     <div class="grid grid-cols-3 gap-5 w-full mx-auto mt-10 pb-28">
-        {#await getExperiments()}
-            Loading
-        {:then experiments}
             {#each experiments as experiment}
                 <a class="group aspect-square transition-all duration-500 card rounded-none text-gray-800 projetCarte shadow-md" style="background-image: url('{experiment.cover}'); background-size: cover; background-position: center;" href={experiment.url} target="_blank">
                     <div class="opacity-0 transition-opacity duration-300 group-hover:opacity-100 card-body flex flex-col justify-between items-start bg-white bg-opacity-95">
@@ -29,7 +22,6 @@
                     </div>
                 </a>
             {/each}
-        {/await}
     </div>
 
 </div>

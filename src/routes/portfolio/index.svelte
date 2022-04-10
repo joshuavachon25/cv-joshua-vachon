@@ -1,19 +1,11 @@
 <script>
     import {stacks} from '$lib/utils/techIcons'
-
-    const getProjets = async () => {
-        let req = await fetch("/api/getProjects")
-        let res = await req.json()
-        return res.projets
-    }
-
+    export let projets
 </script>
 
 
 <div class="grid grid-cols-2 gap-5 w-full mx-auto mt-28 pb-28">
-    {#await getProjets()}
-        Loading
-    {:then projets}
+
         {#each projets as projet}
                 <span class="group aspect-video transition-all duration-500 card rounded-none text-gray-800 projetCarte shadow-md " style="background-image: url('{projet.cover}'); background-size: cover;">
                 <div class="skewElem opacity-0 transition-opacity duration-300 group-hover:opacity-100 card-body flex flex-col justify-between items-start bg-white bg-opacity-95">
@@ -51,6 +43,5 @@
 
 
         {/each}
-    {/await}
 </div>
 

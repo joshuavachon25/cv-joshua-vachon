@@ -1,5 +1,6 @@
 <script>
     import {stacks} from '$lib/utils/techIcons'
+    import {onMount} from "svelte";
     const formations = [
         {
             titre: "Certificat professionnel - Computer science for Web Programming",
@@ -84,13 +85,49 @@
     ]
     const langages = [stacks['html'],stacks['css'],stacks['js'],stacks['svelte-kit'],stacks['vue'],stacks['nuxt'],stacks['php'],stacks['python'],stacks['flutter'],stacks['plus']]
     const logiciels = [stacks['webstorm'],stacks['vscode'],stacks['figma'],stacks['qgis'],stacks['affinity'],stacks['godot'],stacks['blender'],stacks['plus']]
+    let Y = 0, page1
+
+    onMount(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray(".page").forEach((page, i) => {
+            gsap.to(page, {
+                scrollTrigger: {
+                    trigger: page,
+                    start: "top 50",
+                    scrub: 1,
+                    pin: true
+                },
+                duration: 6,
+                opacity: 0
+            })
+        })
+        gsap.utils.toArray(".panel").forEach((page, i) => {
+            gsap.to(page, {
+                scrollTrigger: {
+                    trigger: page,
+                    start: "top 25",
+                    end: "bottom",
+                    scrub: 1,
+                    pin: true
+                },
+                duration: 6,
+                opacity: 0,
+                scale: 1,
+                background:"#f0f0f0"
+            })
+        })
+
+    })
+
 </script>
 
-
+<svelte:head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js"></script>
+</svelte:head>
 
 <div class="flex flex-col ">
-
-    <div class="w-full min-h-screen flex flex-col justify-center items-center page ">
+    <div class="w-full min-h-screen flex flex-col justify-center items-center page" >
         <img src="/facejoshua.svg" class="w-1/6 face">
         <h1>JOSHUA L.J. VACHON</h1>
         <blockquote class="prose prose-2xl text-center mx-auto">J'existe car je suis, mais qui est ce 'je' qui écrit? Pour le découvrir, ces lignes ne suffiront pas, mais au moins vous sortirez du brouillard.</blockquote>

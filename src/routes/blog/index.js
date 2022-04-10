@@ -4,6 +4,7 @@ export const get = async () => {
     let { data: articles, error } = await supabase
         .from('articles')
         .select('*')
+        .order('dateCreation', {ascending: false})
 
     return{
         body: {

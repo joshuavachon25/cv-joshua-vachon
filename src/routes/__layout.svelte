@@ -44,7 +44,7 @@
         <div class="text-right flex flex-col justify-center h-full items-end -mt-20">
             <div class="sticky top-0 bottom-0">
                 {#each menu as item}
-                    <a class="lien transition-all duration-500 my-3 {$page.url.pathname === item.url ? 'texteGlou': 'text-black '} hover:text-mauve hover:tracking-wider" href={item.url}>{item.nom}</a>
+                    <a sveltekit:prefetch class="lien transition-all duration-500 my-3 {$page.url.pathname === item.url ? 'texteGlou': 'text-black '} hover:text-mauve hover:tracking-wider" href={item.url}>{item.nom}</a>
                 {/each}
             </div>
         </div>

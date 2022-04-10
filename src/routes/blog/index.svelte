@@ -1,11 +1,6 @@
 <script>
     import { format} from 'date-fns'
-
-    const getPosts = async () => {
-        let req = await fetch("/api/getPosts")
-        let res = await req.json()
-        return res.articles
-    }
+    export let articles
 </script>
 
 <div class="w-full px-5 lg:px-0 mx-auto mb-20">
@@ -16,11 +11,9 @@
     </div>
 
     <div class="grid grid-cols-3 gap-10 w-full  mx-auto">
-        {#await getPosts()}
-            Loading
-        {:then articles}
+
             {#each articles as article}
-                <a class="hover:ring-4 group hover:ring-gray-700 hover:shadow-lg duration-500 card bg-white text-gray-800 shadow-md rounded-md"  href={"/blog/" + article.id}>
+                <a sveltekit:prefetch class="hover:ring-4 group hover:ring-gray-700 hover:shadow-lg duration-500 card bg-white text-gray-800 shadow-md rounded-md"  href={"/blog/" + article.id}>
                     <div class=""><img class="object-cover h-44 w-full" src={article.img} alt="Shoes" /></div>
                     <div class="card-body flex flex-col justify-between items-end h-full">
                         <div class="grow">
@@ -32,7 +25,7 @@
                     </div>
                 </a>
             {/each}
-        {/await}
+
 
     </div>
 

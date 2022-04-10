@@ -4,7 +4,7 @@ export const get = async ({params}) => {
     let { data: article, error } = await supabase
         .from('articles')
         .select('*, users(*)')
-        .eq('id', params.id)
+        .eq('id', params.slug)
 
     return{
         body: {
