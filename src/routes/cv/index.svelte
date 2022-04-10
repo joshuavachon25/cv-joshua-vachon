@@ -121,10 +121,7 @@
 
 </script>
 
-<svelte:head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js"></script>
-</svelte:head>
+
 
 <div class="flex flex-col ">
     <div class="w-full min-h-screen flex flex-col justify-center items-center page" >

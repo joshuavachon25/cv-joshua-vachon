@@ -25,6 +25,11 @@
 
 </script>
 
+<svelte:head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js"></script>
+</svelte:head>
+
 <div class="flex flex-row">
     <div class="w-1/12"></div>
     <div class="h-screen w-full lg:w-8/12 flex flex-col">
