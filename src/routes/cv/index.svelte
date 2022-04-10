@@ -97,7 +97,7 @@
                     scrub: 1,
                     pin: true
                 },
-                duration: 6,
+                duration: 1,
                 opacity: 0
             })
         })

@@ -1,6 +1,7 @@
 <script>
     import {stacks} from '$lib/utils/techIcons'
     export let projets
+
 </script>
 
 
