@@ -125,20 +125,20 @@
 
 <div class="flex flex-col ">
     <div class="w-full min-h-screen flex flex-col justify-center items-center page" >
-        <img src="/facejoshua.svg" class="w-1/6 face">
-        <h1>JOSHUA L.J. VACHON</h1>
-        <blockquote class="prose prose-2xl text-center mx-auto">J'existe car je suis, mais qui est ce 'je' qui écrit? Pour le découvrir, ces lignes ne suffiront pas, mais au moins vous sortirez du brouillard.</blockquote>
+        <img src="/facejoshua.svg" class="w-2/6 md:w-1/6 face">
+        <h1 class="text-2xl mt-2 lg:text-4xl lg:mt-0">JOSHUA L.J. VACHON</h1>
+        <blockquote class="prose prose-lg px-4 lg:prose-2xl text-center mx-auto">J'existe car je suis, mais qui est ce 'je' qui écrit? Pour le découvrir, ces lignes ne suffiront pas, mais au moins vous sortirez du brouillard.</blockquote>
         <i class="fa-solid fa-chevrons-down animate-bounce fa-3x mt-10"></i>
     </div>
 
     <div class="page flex flex-col">
-        <p class="prose-2xl w-3/5 mx-auto text-justify">Joshua L.J. Vachon termine présentement une maîtrise en histoire de type informatique appliquée à l'Université de Sherbrooke. Depuis sa tendre enfance, ce qui caractérise Joshua, c'est sa curiosité pour tout et n'importe quoi! Trop curieux peut-être, il n'a pas pu choisir simplement une discipline, ce qui explique un cheminement académique ératique, mais aussi sa grande polyvalence et sa multidisciplinarité. Il a donc su acquérir des compétences autant en développement web, recherche en sciences humaines et sociales qu'en développement logiciel ou qu'en cartographie. </p>
+        <p class="proxe-lg lg:prose-2xl px-5 md:px-0 md:w-3/5 mx-auto text-justify">Joshua L.J. Vachon termine présentement une maîtrise en histoire de type informatique appliquée à l'Université de Sherbrooke. Depuis sa tendre enfance, ce qui caractérise Joshua, c'est sa curiosité pour tout et n'importe quoi! Trop curieux peut-être, il n'a pas pu choisir simplement une discipline, ce qui explique un cheminement académique ératique, mais aussi sa grande polyvalence et sa multidisciplinarité. Il a donc su acquérir des compétences autant en développement web, recherche en sciences humaines et sociales qu'en développement logiciel ou qu'en cartographie. </p>
         <i class="fa-solid fa-chevrons-down animate-bounce fa-3x mt-10"></i>
     </div>
 
     <div class="flex flex-col mt-10 page">
-        <div class="grid grid-cols-2">
-        <div class="flex flex-col">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="lg:flex-col hidden lg:flex">
             <div class="p-8 lg:mb-6 text-center hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <h3 class="mb-4 text-xl md:text-2xl leading-tight font-medium">Web un jour, web toujours</h3>
                 <p class="text-coolGray-500  ">Le développement web est un coup de foudre qui me suis depuis mes 11 ans; lorsque nous avons acquis notre premier ordinateur</p>
@@ -146,7 +146,7 @@
 
         </div>
 
-        <div class="flex flex-col">
+        <div class="lg:flex-col hidden lg:flex">
             <div class="p-8 lg:mb-6 text-center hover:bg-white rounded-md hover:shadow-xl transition duration-200">
 
                 <h3 class="mb-4 text-xl md:text-2xl leading-tight font-medium">Historien, développeur ou Garou?</h3>
@@ -157,7 +157,7 @@
         </div>
         <div>
             <h3 class="mb-4 text-xl md:text-2xl leading-tight font-medium text-center">Langages privilégiés</h3>
-            <div class="flex flex-row my-5 w-4/5 mx-auto mb-10 gap-5 justify-center items-center">
+            <div class="flex flex-row flex-wrap lg:flex-nowrap my-5 w-4/5 mx-auto mb-10 gap-5 justify-center items-center">
                 {#each langages as langage}
                     <div class="group w-12 h-12 relative text-center mx-auto">
                         {@html langage.icone}
@@ -168,7 +168,7 @@
                 {/each}
             </div>
             <h3 class="mb-4 text-xl md:text-2xl leading-tight font-medium text-center">Logiciels privilégiés</h3>
-            <div class="flex flex-row my-5 w-4/5 mx-auto mb-10 gap-5 justify-center items-center">
+            <div class="flex flex-row flex-wrap lg:flex-nowrap my-5 w-4/5 mx-auto mb-10 gap-5 justify-center items-center">
                 {#each logiciels as logiciel}
                     <div class="group w-12 h-12 relative text-center mx-auto">
                         {@html logiciel.icone}
@@ -178,7 +178,7 @@
                     </div>
                 {/each}
             </div>
-            <h4 class="prose-2xl text-center mt-20">
+            <h4 class="prose-xl px-2 md:px-0 md:prose-2xl text-center mt-20">
                 Téléchargez <a href="#"  class="text-purple-500 font-bold">mon CV</a> ou continuez à dérouler pour voir mes formations et expériences pertinentes!
             </h4>
         </div>
@@ -187,33 +187,33 @@
 
     <h2 class="w-4/5 mx-auto mt-28">Formations</h2>
         {#each formations as formation}
-            <div class="bg-white box p-4 shadow-md w-4/5 mx-auto my-3 panel scale-110">
+            <div class="bg-white box p-4 shadow-md md:w-4/5 mx-auto my-3 panel md:scale-110">
                 <div>
                     <p  class="text-sm">{formation.institution}</p>
                 </div>
-                <div class="flex flex-row justify-between">
-                    <p class="text-xl font-medium">{formation.titre}</p>
-                    <p  class="text-xl">{formation.annee}</p>
+                <div class="flex md:flex-row flex-col justify-between md:gap-2">
+                    <p class="text-lg md:text-xl font-medium">{formation.titre}</p>
+                    <p  class="text-sm md:text-xl">{formation.annee}</p>
                 </div>
 
                 <div>
-                    <p  class="text-lg italic px-4">{formation.detail}</p>
+                    <p  class="text-sm md:text-lg italic px-4">{formation.detail}</p>
                 </div>
             </div>
         {/each}
     <h2 class="w-4/5 mx-auto mt-28">Expériences</h2>
     {#each experiences as experience}
-        <div class="bg-white p-4 shadow-md w-4/5 mx-auto my-3 panel scale-110">
+        <div class="bg-white box p-4 shadow-md md:w-4/5 mx-auto my-3 panel md:scale-110">
             <div>
                 <p  class="text-sm">{experience.institution}</p>
             </div>
-            <div class="flex flex-row justify-between">
-                <p class="text-xl font-medium">{experience.titre}</p>
-                <p  class="text-xl">{experience.annee}</p>
+            <div class="flex md:flex-row flex-col justify-between md:gap-2">
+                <p class="text-lg md:text-xl font-medium">{experience.titre}</p>
+                <p  class="text-sm md:text-xl">{experience.annee}</p>
             </div>
 
             <div>
-                <p  class="text-lg italic px-4">{experience.detail}</p>
+                <p  class="text-sm md:text-lg italic px-4">{experience.detail}</p>
             </div>
         </div>
     {/each}

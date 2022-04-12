@@ -8,13 +8,13 @@
         <p class="mt-28  mb-10 md:px-40 text-xl italic">Ce petit labo d'expérimentation est un fourre-tout de petit test en tout genre.</p>
     </div>
 
-    <div class="grid grid-cols-3 gap-5 w-full mx-auto mt-10 pb-28">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full mx-auto mt-10 pb-28">
             {#each experiments as experiment}
                 <a class="group aspect-square transition-all duration-500 card rounded-none text-gray-800 projetCarte shadow-md" style="background-image: url('{experiment.cover}'); background-size: cover; background-position: center;" href={experiment.url} target="_blank">
                     <div class="opacity-0 transition-opacity duration-300 group-hover:opacity-100 card-body flex flex-col justify-between items-start bg-white bg-opacity-95">
                         <div>
-                            <h4 class="font-black text-2xl ">{experiment.titre}</h4>
-                            <p class="px-2">{experiment.content}</p>
+                            <h4 class="font-black text-lg lg:text-2xl ">{experiment.titre}</h4>
+                            <p class="px-2 text-sm">{experiment.content}</p>
                         </div>
                         <div class="w-full">
                             <button class="btn btn-ghost w-full">Ouvrir l'expérimentation</button>

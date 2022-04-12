@@ -39,3 +39,19 @@ p{
 .texteGlou{
     @apply text-mauve;
 }
+
+.articleTheme h2{
+    @apply font-medium leading-loose tracking-wider;
+}
+
+.articleTheme p{
+    @apply prose prose-xl text-zinc-500 font-medium;
+}
+
+.articleTheme kbd{
+    @apply bg-slate-50 rounded-lg px-2 py-1 border-2 border-gray-200 shadow;
+}
+
+.articleTheme ul{
+    @apply list-disc pl-10 prose prose-lg m-5 font-medium;
+}
