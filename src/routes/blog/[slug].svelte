@@ -1,10 +1,21 @@
 <script>
+    import {page} from "$app/stores";
     import {format} from "date-fns";
     import MDXViewer from "$lib/components/MDXViewer.svelte";
-    import Auteur from "../../lib/components/Auteur.svelte";
 
     export let article
 </script>
+
+<svelte:head>
+    <title>{article.titre} — Joshua L.J. Vachon</title>
+    <meta name="description" content={article.resume} />
+    <meta name="keywords" content="Joshua, Vachon, Joshua L.J. Vachon, web, dev, cartographie, histoire, humanités numériques, digital humanities, articles, blog, blogue, texte">
+    <meta property="og:url"                content="https://www.joshuavachon.dev/blog/{$page.params.slug}" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="{article.titre} — Joshua L.J. Vachon" />
+    <meta property="og:description"        content={article.resume} />
+    <meta property="og:image"              content={article.img}/>
+</svelte:head>
 
 <div class="mt-6 md:mt-12">
 

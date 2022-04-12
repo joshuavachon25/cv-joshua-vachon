@@ -3,6 +3,18 @@
 
 </script>
 
+<svelte:head>
+    <title>Le petit labo — Joshua L.J. Vachon</title>
+    <meta name="description" content="Ce petit labo est un espace créatif pour toutes mes expérimentations sur le web. Vous trouvrez des petits projets, avec le code et une démo!" />
+    <meta name="keywords" content="Joshua, Vachon, Joshua L.J. Vachon, web, dev, cartographie, histoire, humanités numériques, digital humanities, labo, web experiment">
+    <meta property="og:url"                content="https://www.joshuavachon.dev/labo" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Le petit labo - Joshua L.J. Vachon" />
+    <meta property="og:description"        content="Ce petit labo est un espace créatif pour toutes mes expérimentations sur le web. Vous trouvrez des petits projets, avec le code et une démo!" />
+    <meta property="og:image"              content="/cover/galaxygenerator.png" />
+</svelte:head>
+
+
 <div class="w-4/5 mx-auto">
     <div class="flex-col mt-10 text-center">
         <p class="mt-28  mb-10 md:px-40 text-xl italic">Ce petit labo d'expérimentation est un fourre-tout de petit test en tout genre.</p>

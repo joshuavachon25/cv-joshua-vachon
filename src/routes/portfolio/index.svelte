@@ -4,6 +4,17 @@
 
 </script>
 
+<svelte:head>
+    <title>Portfolio — Joshua L.J. Vachon</title>
+    <meta name="description" content="Découvrez mes différents projets web, mes oeuvres et mes cartes. " />
+    <meta name="keywords" content="Joshua, Vachon, Joshua L.J. Vachon, web, dev, cartographie, histoire, humanités numériques, digital humanities, portfolio">
+    <meta property="og:url"                content="https://www.joshuavachon.dev/portfolio" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Portfolio - Joshua L.J. Vachon" />
+    <meta property="og:description"        content="Découvrez les différents projets web, les oeuvres et les cartes de Joshua Vachon. " />
+    <meta property="og:image"              content="/fb-default.png" />
+</svelte:head>
+
 
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full mx-auto mt-12 lg:mt-28 pb-28">
 

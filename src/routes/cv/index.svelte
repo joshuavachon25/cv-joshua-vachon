@@ -121,7 +121,16 @@
 
 </script>
 
-
+<svelte:head>
+    <title>Qui suis-je? — Joshua L.J. Vachon</title>
+    <meta name="description" content="J'existe car je suis, mais qui est ce 'je' qui écrit? Pour le découvrir, ces lignes ne suffiront pas, mais au moins vous sortirez du brouillard." />
+    <meta name="keywords" content="Joshua, Vachon, Joshua L.J. Vachon, web, dev, cartographie, histoire, humanités numériques, digital humanities, cv, curriculum vitae, à propos, about">
+    <meta property="og:url"                content="https://www.joshuavachon.dev/cv" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Qui suis-je? - Joshua L.J. Vachon" />
+    <meta property="og:description"        content="J'existe car je suis, mais qui est ce 'je' qui écrit? Pour le découvrir, ces lignes ne suffiront pas, mais au moins vous sortirez du brouillard." />
+    <meta property="og:image"              content="/fb-default.png" />
+</svelte:head>
 
 <div class="flex flex-col ">
     <div class="w-full min-h-screen flex flex-col justify-center items-center page" >
